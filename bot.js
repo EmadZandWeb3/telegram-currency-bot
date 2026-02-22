@@ -6,14 +6,9 @@ const HttpsProxyAgent = require("https-proxy-agent");
 const fs = require("fs");
 const path = require("path");
 
-// ------------------- HTTP Proxy -------------------
-// const proxyAgent = new HttpsProxyAgent("http://10.12.173.164:10808");
-
 // ------------------- Telegram Bot -------------------
 const bot = new TelegramBot(process.env.BOT_TOKEN, {
   polling: true
-  // ,
-//   request: { agent: proxyAgent }
 });
 
 
@@ -166,4 +161,4 @@ cron.schedule(cronExpression, () => {
 // ------------------- Initial send (optional) -------------------
 sendPricesToAll();
 
-console.log("bot is running... without proxy");
+console.log("bot is running...");
